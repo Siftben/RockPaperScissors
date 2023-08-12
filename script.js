@@ -1,28 +1,32 @@
 let playerWin = 0, computerWin = 0;
 
-let playerSelection = prompt("Paper, Rock or Scissors?");
-playerSelection = playerSelection.toLowerCase();
-playerChoice(playerSelection);
+//console.log(playRound(playerSelection, computerSelection));
 
-const computerSelection = getComputerChoice();
-alert("Computer choose " + computerSelection);
-
-console.log(playRound(playerSelection, computerSelection));
-
-for (let i = 1; i <= 5; i++) {
-    let playerSelection = prompt("Paper, Rock or Scissors?");
-    playerSelection = playerSelection.toLowerCase();
-    playerChoice(playerSelection);
-
-    const computerSelection = getComputerChoice();
-    alert("Computer choose " + computerSelection);
-
-    console.log(playRound(playerSelection, computerSelection));
+function loop() {
+    for (let i = 1; i <= 5; i++) {
+        let playerSelection = prompt("Paper, Rock or Scissors?");
+        playerSelection = playerSelection.toLowerCase();
+        playerChoice(playerSelection);
+    
+        const computerSelection = getComputerChoice();
+        alert("Computer choose " + computerSelection);
+    
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
 
-alert("You win " + playerWin + " ,Computer win " + computerWin);
+function rockButton() {
+    playerChoice("rock");
+}
 
-//console.log(playRound(playerSelection, computerSelection));
+function paperButton() {
+    playerChoice("paper");
+}
+
+function scissorsButton() {
+    playerChoice("scissors");
+}
+
 
 function playerChoice(playerSelection) {
     if(playerSelection === "rock"){
@@ -37,6 +41,8 @@ function playerChoice(playerSelection) {
     else{
         alert("You choose nothing!");
     }
+
+    game(playerSelection);
 }
 
 function getComputerChoice() {
@@ -61,26 +67,33 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if(playerSelection === computerSelection){
+    
+    if(playerSelection === computerSelection){
     alert("It's a draw");
-  }
+    }
 
-  else if (playerSelection === "paper" && computerSelection === "rock" 
-  || playerSelection === "rock" && computerSelection === "scissors" 
-  || playerSelection === "scissors" && computerSelection === "paper") {
-    alert("You Win!");
-    playerWin = playerWin + 1;
-  }
+    else if (playerSelection === "paper" && computerSelection === "rock" 
+    || playerSelection === "rock" && computerSelection === "scissors" 
+    || playerSelection === "scissors" && computerSelection === "paper") {
+        alert("You Win!");
+        playerWin = playerWin + 1;
+    }
   
-  else if (computerSelection === "paper" && playerSelection === "rock" 
-  || computerSelection === "rock" && playerSelection === "scissors" 
-  || computerSelection === "scissors" && playerSelection === "paper") {
-    alert("You Lose!");
-    computerWin = computerWin + 1;
-  }
+    else if (computerSelection === "paper" && playerSelection === "rock" 
+    || computerSelection === "rock" && playerSelection === "scissors" 
+    || computerSelection === "scissors" && playerSelection === "paper") {
+        alert("You Lose!");
+        computerWin = computerWin + 1;
+    }
 
 }
 
-function game(params) {
-    
+function game(playerSelection) {
+
+    const computerSelection = getComputerChoice();
+    alert("Computer choose " + computerSelection);
+
+    console.log(playRound(playerSelection, computerSelection));
+
+    alert("You win " + playerWin + " ,Computer win " + computerWin);
 }

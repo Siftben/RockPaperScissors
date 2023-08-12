@@ -1,0 +1,36 @@
+html, body{
+    height: 100%;
+}
+
+.scores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:64px;
+
+    margin: 24px;
+}
+
+.player-score, .computer-score{
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
+}
+
+.player-score h1, .computer-score h1{
+    margin: 10px;
+}
+
+.game-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:128px;
+
+    margin:88px;
+}
+
+button{
+    font-size: 48px;
+}
