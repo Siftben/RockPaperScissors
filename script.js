@@ -96,4 +96,7 @@ function game(playerSelection) {
     console.log(playRound(playerSelection, computerSelection));
 
     alert("You win " + playerWin + " ,Computer win " + computerWin);
+
+    document.getElementById("player-score").innerHTML = playerWin;
+    document.getElementById("computer-score").innerHTML = computerWin;
 }
