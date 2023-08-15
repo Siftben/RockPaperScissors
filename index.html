@@ -10,21 +10,43 @@
     <body>
         <script src="script.js"></script>
 
-        <div class="scores">
-            <div class="player-score">
-                <h1>Player</h1> <h2 id="player-score">0</h2>
+        <div class="body-flex">
+
+            <div class="player-play">
+                <h1>Player</h1>
+                <h3 id="player-choose"></h3>
             </div>
 
-            <div class="computer-score">
-                <h1>Computer</h1> <h2 id="computer-score">0</h2>
-            </div>
-        </div>
-
-        <div class="game-buttons">
-            <button type="button" onclick="rockButton()">Rock</button>
-            <button type="button" onclick="paperButton()">Paper</button>
-            <button type="button" onclick="scissorsButton()">Scissors</button>
-        </div>
+            <div class="center-body">
+            <h1>Score</h1>
+                <div class="scores">
+                    
+                    <div class="player-score">
+                        <h1>Player</h1> <h2 id="player-score">0</h2>
+                    </div>
         
+                    <div class="computer-score">
+                        <h1>CPU</h1> <h2 id="computer-score">0</h2>
+                    </div>
+                </div>
+                
+                <div class="game-buttons">
+                    <button type="button" onclick="rockButton()">Rock</button>
+                    <button type="button" onclick="paperButton()">Paper</button>
+                    <button type="button" onclick="scissorsButton()">Scissors</button>
+                </div>
+
+                <div class="results">
+                    <h1 id="results-text">Results</h1>
+                </div>
+            </div>
+
+            <div class="computer-play">
+                <h1>CPU</h1>
+                <h3 id="computer-choose"></h3>
+            </div>
+
+        </div>
+
     </body>
 </html>
