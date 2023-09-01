@@ -16,15 +16,15 @@ function loop() {
 }
 
 function rockButton() {
-    playerChoice("rock");
+    playerChoice("Rock");
 }
 
 function paperButton() {
-    playerChoice("paper");
+    playerChoice("Paper");
 }
 
 function scissorsButton() {
-    playerChoice("scissors");
+    playerChoice("Scissors");
 }
 
 
@@ -50,13 +50,13 @@ function getComputerChoice() {
 
     switch (x) {
         case 1:
-            return ("rock");
+            return ("Rock");
             break;
         case 2:
-            return ("paper");
+            return ("Paper");
             break;
         case 3:
-            return ("scissors");
+            return ("Scissors");
             break;
 
         default:
@@ -72,16 +72,16 @@ function playRound(playerSelection, computerSelection) {
         document.getElementById("results-text").innerHTML = "It's a Draw!";
     }
 
-    else if (playerSelection === "paper" && computerSelection === "rock"
-        || playerSelection === "rock" && computerSelection === "scissors"
-        || playerSelection === "scissors" && computerSelection === "paper") {
+    else if (playerSelection === "Paper" && computerSelection === "Rock"
+        || playerSelection === "Rock" && computerSelection === "Scissors"
+        || playerSelection === "Scissors" && computerSelection === "Paper") {
         document.getElementById("results-text").innerHTML = "You Win!";
         playerWin = playerWin + 1;
     }
 
-    else if (computerSelection === "paper" && playerSelection === "rock"
-        || computerSelection === "rock" && playerSelection === "scissors"
-        || computerSelection === "scissors" && playerSelection === "paper") {
+    else if (computerSelection === "Paper" && playerSelection === "Rock"
+        || computerSelection === "Rock" && playerSelection === "Scissors"
+        || computerSelection === "Scissors" && playerSelection === "Paper") {
             document.getElementById("results-text").innerHTML = "You Lose!";
         computerWin = computerWin + 1;
     }
@@ -90,6 +90,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game(playerSelection) {
 
+    
     document.getElementById("player-choose").innerHTML = playerSelection;
 
     const computerSelection = getComputerChoice();
